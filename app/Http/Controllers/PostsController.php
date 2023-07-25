@@ -53,6 +53,8 @@ class PostsController extends Controller
              return view('posts.manage',compact('posts'));
     }
 
+
+    //Show edit page
     public function edit(Posts $post){
         return view('posts.edit',['post'=>$post]);
     }
