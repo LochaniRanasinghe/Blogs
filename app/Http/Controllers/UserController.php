@@ -87,7 +87,6 @@ class UserController extends Controller
         $request->session()->invalidate();
 
         //generate a new CSRF token 
-        //This is done to prevent a malicious website from forcing a user to perform an action without their knowledge
         $request->session()->regenerateToken();
 
         return redirect('/')->with('message', 'User logged out successfully');

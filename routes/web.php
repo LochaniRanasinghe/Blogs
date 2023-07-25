@@ -56,11 +56,8 @@ Route::get('/posts/{postId}', [PostsController::class,'show'])->name('post.show'
 Route::get('/posts/manage', [PostsController::class,'manage'])->name('post.manage')->middleware('auth');
 
 //Show the edit form
-// Route::get('/posts/{postId}/edit', [PostsController::class,'edit'])->name('post.edit')->middleware('auth');
-//Method2
 Route::get('/posts/{post}/edit', [PostsController::class,'edit'])->name('post.edit')->middleware('auth');//Update the post details in the database
 
 
-// Route::put('/posts/{postId}/update', [PostsController::class,'update'])->name('post.update')->middleware('auth');
-//Method2
+//update the post details in the database
 Route::put('/posts/{post}', [PostsController::class,'update'])->name('post.update')->middleware('auth');

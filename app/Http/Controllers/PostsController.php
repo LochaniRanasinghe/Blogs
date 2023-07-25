@@ -58,7 +58,6 @@ class PostsController extends Controller
     }
 
     public function update(Request $request,Posts $post){
-       //validate() function takes as an array and we can specify the rules for each field 
         $formFields=$request->validate([
             'title' => 'required',
             'description' => 'required',
@@ -73,11 +72,6 @@ class PostsController extends Controller
         return back()->with('message', 'Post Updated successfully');
     }
 
-    //Manage Posts to get all the posts of the logged in user
-    // public function manage(){
-    //         //***Get all the posts of the logged in user
-    //         $posts=Posts::where('user_id',Auth::user()->id)->get();
-    //          return view('posts.manage',compact('posts'));
-    // }
+    
 
 }
