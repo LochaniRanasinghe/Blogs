@@ -53,11 +53,14 @@ Route::get('/posts/{postId}', [PostsController::class,'show'])->name('post.show'
 
 
 //Manage Posts(Show table of all posts of the logged in user)
-Route::get('/posts/manage', [PostsController::class,'manage'])->name('post.manage')->middleware('auth');
+Route::get('/post/manages', [PostsController::class,'manage'])->name('post.manage')->middleware('auth');
 
 //Show the edit form
-Route::get('/posts/{post}/edit', [PostsController::class,'edit'])->name('post.edit')->middleware('auth');//Update the post details in the database
+Route::get('/posts/{post}/edit', [PostsController::class,'edit'])->name('post.edit')->middleware('auth');
 
 
 //update the post details in the database
 Route::put('/posts/{post}', [PostsController::class,'update'])->name('post.update')->middleware('auth');
+
+//Delete a post
+Route::delete('/posts/{postId}/delete', [PostsController::class,'destroy'])->name('post.delete')->middleware('auth');

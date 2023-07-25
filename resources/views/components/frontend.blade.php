@@ -42,7 +42,7 @@
                     </span>
                 </li>
                 <li>
-                    <a href="/posts/manage" class="hover:text-laravel"
+                    <a href="/post/manages" class="hover:text-laravel"
                         ><i class="fa-solid fa-gear"></i>
                         Manage Blogs</a
                     >

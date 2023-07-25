@@ -59,10 +59,11 @@ class PostsController extends Controller
         return view('posts.edit',['post'=>$post]);
     }
 
+    //Update the post
     public function update(Request $request,Posts $post){
         $formFields=$request->validate([
             'title' => 'required',
-            'description' => 'required',
+            'content' => 'required',
         ]);
 
         //***Add user_id to the formField array 
@@ -74,6 +75,10 @@ class PostsController extends Controller
         return back()->with('message', 'Post Updated successfully');
     }
 
-    
+    //Delete a post
+    public function destroy($postId){
+        Posts::findOrFail($postId)->delete();
+        return redirect(route('post.manage'))->with('message', 'Post deleted Successfully');
+    }
 
 }

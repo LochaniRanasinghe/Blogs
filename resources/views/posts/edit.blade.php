@@ -13,6 +13,7 @@
                     
                     <form method="POST"  action="/posts/{{ $post->id }}" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="mb-6">
                             <label
                                 for="title"

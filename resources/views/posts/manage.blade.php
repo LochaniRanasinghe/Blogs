@@ -23,13 +23,18 @@
                                     {{ $post->title }}
                                 </a>
                             </td>
+                             <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
+                                <a href="#">
+                                    {{ $post->content }}
+                                </a>
+                            </td>
                             <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                                <a href="#" class="text-blue-400 px-6 py-2 rounded-xl"><i
+                                <a href="{{ route('post.edit',$post->id) }}" class="text-blue-400 px-6 py-2 rounded-xl"><i
                                         class="fa-solid fa-pen-to-square"></i>
                                     Edit</a>
                             </td>
                             <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                                <form action="#" method="POST">
+                                <form action="{{ route('post.delete',$post->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="text-red-600">
